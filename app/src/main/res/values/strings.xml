@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">covid 19</string>
+    <string name="scan_x_ray">Scan X-Ray</string>
+    <string name="symptoms_test">Scan X-Ray</string>
 </resources>
