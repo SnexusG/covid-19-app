@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun test(){
-        val intent = Intent(this, SymptomTest2::class.java)
+        val intent = Intent(this, SymptomTest::class.java)
         startActivity(intent)
     }
 }

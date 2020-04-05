@@ -47,12 +47,11 @@ public class SymptomTest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_symptom_test);
+        setContentView(R.layout.activity_symptom_test_advait);
         rb1 = findViewById(R.id.yesBtn);
         rb2 = findViewById(R.id.noBtn);
         symptomsQ = findViewById(R.id.symptomsQ);
-        symptomsOptions = findViewById(R.id.symptomsOptions);
+        //symptomsOptions = findViewById(R.id.symptomsOptions);
     }
 
     public void onClickedRadio(View view){
@@ -93,7 +92,7 @@ public class SymptomTest extends AppCompatActivity {
             finish();
         }
         symptomsQ.setText(Questions[count]);
-        symptomsOptions.clearCheck();
+        //symptomsOptions.clearCheck();
     }
 
 }

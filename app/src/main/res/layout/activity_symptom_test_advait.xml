@@ -69,6 +69,7 @@
         app:layout_constraintVertical_bias="0.833">
 
         <TextView
+            android:id="@+id/symptomsQ"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -80,6 +81,7 @@
             android:textSize="30sp" />
 
         <Button
+            android:id="@+id/yesBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -87,9 +89,11 @@
             android:layout_marginEnd="30dp"
             android:background="@drawable/white_rounded_background"
             android:fontFamily="@font/montserrat_bold"
+            android:onClick="onClickedRadio"
             android:text="YES" />
 
         <Button
+            android:id="@+id/noBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -98,6 +102,7 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/white_rounded_background"
             android:fontFamily="@font/montserrat_bold"
+            android:onClick="onClickedRadio"
             android:text="NO" />
 
     </LinearLayout>
