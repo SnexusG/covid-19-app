@@ -6,7 +6,7 @@
     <color name="gray">#cccccc</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-    <color name='pie1'></color>
+  <!--  <color name='pie1'></color> no colour inserted-->
     <color name="P">#378fb3</color>
     <color name="darkergreen">#298673</color>
     <color name="green">#37b399</color>
@@ -15,6 +15,7 @@
     <color name="darkblue">#296b86</color>
     <color name="testcolorblue">#1b4759</color>
     <color name="lightgray">#ededed</color>
-    >
+    <color name="light_gray_font">#707070</color>
+    <color name="light_purple">#93A1F7</color>
 
 </resources>
