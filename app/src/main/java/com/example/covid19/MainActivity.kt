@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
         QuizButton.setOnClickListener {
             test()
         }
+
+
+
     }
 
     fun test(){
