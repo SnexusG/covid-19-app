@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".SymptomTest"
     android:padding="30dp"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -43,12 +44,13 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <RadioGroup
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="70dp"
             android:id="@+id/symptomsOptions"
             android:outlineSpotShadowColor="@color/darkblue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RadioButton
+                android:id="@+id/yesBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes"
@@ -56,8 +58,10 @@
                 android:textSize="20sp"
                 android:textColor="#fff"
                 android:layout_margin="20dp"
+                android:onClick="onClickedRadio"
                 />
             <RadioButton
+                android:id="@+id/noBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"
@@ -65,20 +69,10 @@
                 android:textSize="20sp"
                 android:textColor="#fff"
                 android:layout_margin="20dp"
+                android:onClick="onClickedRadio"
                 />
         </RadioGroup>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/next_question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:text="Next"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="26sp"
-        />
 </RelativeLayout>
