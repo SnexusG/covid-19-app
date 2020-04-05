@@ -3,4 +3,7 @@
     <string name="scan_x_ray">Scan X-Ray</string>
     <string name="actions">ACTIONS</string>
     <string name="symptoms_test">Symptom test</string>
+    <string name="questions">Questions</string>
+    <string name="covid">COVID-19</string>
+    <string name="temp_question">Hello, what are the chances that you have corona virus, do you? or do you not?</string>
 </resources>
