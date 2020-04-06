@@ -57,7 +57,7 @@ public class ChatFragment extends Fragment {
             Toast.makeText(getActivity(), "No one is logged in!", Toast.LENGTH_SHORT).show();
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), sign_in_REQUEST_CODE);
         }else{
-            Snackbar.make(activity_chat,"Welcome, " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Snackbar.LENGTH_SHORT).show();
+            //Snackbar.make(activity_chat,"Welcome, " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Snackbar.LENGTH_SHORT).show();
             displayMessage();
         }
 

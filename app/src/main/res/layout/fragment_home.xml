@@ -6,7 +6,7 @@
     tools:context=".home"
     android:orientation="vertical">
 
-    <LinearLayout
+<!--    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
 
     <LinearLayout
