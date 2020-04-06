@@ -1,7 +1,7 @@
 package com.example.covid19
 
+import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -14,7 +14,6 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.log
 
 class CheckXray : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,9 +25,10 @@ class CheckXray : AppCompatActivity() {
         }
     }
 
-    private fun clickPicture() {
-        val REQUEST_IMAGE_CAPTURE = 1
 
+    private val REQUEST_IMAGE_CAPTURE = 1888
+
+    private fun clickPicture() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(packageManager)?.also {
 
@@ -40,19 +40,15 @@ class CheckXray : AppCompatActivity() {
                 } as File
 
                 photoFile.also {
-                    val photoURI: Uri = FileProvider.getUriForFile(this,"com.example.android.fileprovider", it)
+                    val photoURI = FileProvider.getUriForFile(this, "com.example.android.fileprovider", it)
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-
                 }
-
-                //TODO: do processing on the image
-                //val bitmap = Bitmap.createScaledBitmap(photoFile, 224, 224, true)
             }
         }
     }
 
-    lateinit var currentPhotoPath: String
+    private lateinit var currentPhotoPath: String
 
     @Throws(IOException::class)
     private fun createImageFile(): File {
@@ -68,5 +64,21 @@ class CheckXray : AppCompatActivity() {
         ).apply {
             currentPhotoPath = absolutePath
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            try {
+                Log.d("ActivityResult", currentPhotoPath)
+                imageView.setImageURI(Uri.parse(currentPhotoPath))
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        } else {
+            Log.d("Activity Result", "error")
+        }
+
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
