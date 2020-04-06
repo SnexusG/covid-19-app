@@ -14,12 +14,18 @@ class MainActivity : AppCompatActivity() {
             test()
         }
 
-
-
+        checkXrayButton.setOnClickListener {
+            scanXray()
+        }
     }
 
     fun test(){
         val intent = Intent(this, SymptomTest::class.java)
+        startActivity(intent)
+    }
+
+    fun scanXray(){
+        val intent = Intent(this, CheckXray::class.java)
         startActivity(intent)
     }
 }

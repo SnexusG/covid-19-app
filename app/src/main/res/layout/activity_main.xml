@@ -55,7 +55,7 @@
             android:textColor="@color/light_gray_font" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/checkXrayButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
