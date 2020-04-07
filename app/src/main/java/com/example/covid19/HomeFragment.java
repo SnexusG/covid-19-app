@@ -7,10 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 
 /**
@@ -23,6 +26,8 @@ public class HomeFragment extends Fragment {
 
     private Button quizBtn;
     private Button xrayBtn;
+    private Button logoutBtn;
+    private FirebaseAuth mAuth;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -41,6 +46,9 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         quizBtn = getView().findViewById(R.id.QuizButton);
         xrayBtn = getView().findViewById(R.id.xrayButton);
+        logoutBtn = getView().findViewById(R.id.logOutBtn);
+
+        mAuth = FirebaseAuth.getInstance();
 
         quizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +66,16 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mAuth.getCurrentUser() != null){
+                    mAuth.signOut();
+                    Intent intent = new Intent(getActivity(), Login.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 }

@@ -176,13 +176,13 @@ public class Login extends AppCompatActivity {
 
     }
 
-    //@Override
-    //protected void onStart() {
-    //  super.onStart();
-    // if (mAuth.getCurrentUser() != null ) {
-    //    startActivity(new Intent(SignUP_SIgnIn.this, quiz.class));
-    //   finish();
-    //}
-    //}
+    @Override
+    protected void onStart() {
+      super.onStart();
+     if (mAuth.getCurrentUser() != null ) {
+        startActivity(new Intent(Login.this, home.class));
+       finish();
+    }
+    }
 
 }

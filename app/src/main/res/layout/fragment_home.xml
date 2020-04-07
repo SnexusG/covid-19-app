@@ -26,6 +26,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/take_action_background"
         android:orientation="vertical"
@@ -55,18 +56,45 @@
             android:textColor="@color/light_gray_font" />
 
         <Button
-            android:id="@+id/xrayButton"
+        android:id="@+id/xrayButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/white_rounded_background"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/scan_x_ray"
+        android:textColor="@color/light_gray_font" />
+
+        <Button
+            android:id="@+id/logOutBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
             android:layout_marginBottom="30dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/white_rounded_background"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/scan_x_ray"
+            android:text="Logout"
             android:textColor="@color/light_gray_font" />
     </LinearLayout>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/newsCard"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SWAPBIL GORE SJDASDK KSDKDS KSDFKSD K KDK A"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat_bold"
+            />
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
