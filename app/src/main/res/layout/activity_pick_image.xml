@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/cardview_dark_background"
+    tools:context=".pickImage">
+
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            />
+
+        <Button
+            android:id="@+id/choose_img"
+            android:layout_marginHorizontal="100sp"
+            android:layout_marginVertical="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_below="@+id/edit_text_message"
+            android:background="@drawable/rounded_button2"
+            android:text="Choose Image"
+            android:textSize="15sp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
