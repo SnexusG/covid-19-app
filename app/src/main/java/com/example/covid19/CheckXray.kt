@@ -2,6 +2,8 @@ package com.example.covid19
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -14,6 +16,7 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class CheckXray : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +74,10 @@ class CheckXray : AppCompatActivity() {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             try {
                 Log.d("ActivityResult", currentPhotoPath)
-                imageView.setImageURI(Uri.parse(currentPhotoPath))
+
+                val bitmap = BitmapFactory.decodeFile(currentPhotoPath).also { bitmap -> imageView.setImageBitmap(bitmap) }
+                sendToModel(bitmap)
+
             } catch (e: IOException) {
                 e.printStackTrace()
             }
@@ -80,5 +86,9 @@ class CheckXray : AppCompatActivity() {
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    fun sendToModel(image: Bitmap){
+        //TODO: add model code and firebase code
     }
 }
