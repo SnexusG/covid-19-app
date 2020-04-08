@@ -7,7 +7,16 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/clickPicture"
+        android:id="@+id/clickPictureButton"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="710dp" />
+
+    <Button
+        android:id="@+id/pickPictureButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button"
