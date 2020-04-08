@@ -118,7 +118,6 @@
         android:maxWidth="200dp"
         android:maxHeight="200dp"
         android:rotation="90"
-        android:src="@drawable/ic_launcher_foreground"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

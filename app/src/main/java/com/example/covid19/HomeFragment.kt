@@ -22,38 +22,37 @@ class HomeFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
 
-        QuizButton.setOnClickListener(View.OnClickListener {
+        QuizButton.setOnClickListener {
             val intent = Intent(activity, SymptomTest::class.java)
             startActivity(intent)
-        })
+        }
 
-        xrayButton.setOnClickListener(View.OnClickListener {
+        xrayButton.setOnClickListener {
             val intent = Intent(activity, CheckXray::class.java)
             startActivity(intent)
-        })
+        }
 
-        logOutBtn.setOnClickListener(View.OnClickListener {
+        logOutBtn.setOnClickListener {
             if (mAuth!!.currentUser != null) {
                 mAuth!!.signOut()
                 val intent = Intent(activity, Login::class.java)
                 startActivity(intent)
             }
-        })
+        }
 
-        val content = Content_Stats()
+        val content = ContentStats()
         content.execute()
-        val content2 = Content_News()
+        val content2 = ContentNews()
         content2.execute()
     }
 
-    private inner class Content_News : AsyncTask<Void?, Void?, Void?>() {
+    private inner class ContentNews : AsyncTask<Void?, Void?, Void?>() {
 
         private val news = arrayOfNulls<String>(5)
 
@@ -87,7 +86,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    private inner class Content_Stats : AsyncTask<Void?, Void?, Void?>() {
+    private inner class ContentStats : AsyncTask<Void?, Void?, Void?>() {
 
 
         private val stats = Array(31) { arrayOfNulls<String>(4) }

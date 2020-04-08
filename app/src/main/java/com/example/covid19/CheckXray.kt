@@ -236,8 +236,8 @@ class CheckXray : AppCompatActivity() {
                     for (label in labels) {
                         val text = label.text
                         val confidence = label.confidence
-                        outcomeTextView.text = text
-                        confidenceTextView.text = "${confidence*100}%"
+                        outcomeTextView.text = "Outcome: $text"
+                        confidenceTextView.text = "Confidence: ${confidence*100}%"
 
                         Log.d("AUTOML", "Result: $text = $confidence")
                     }
