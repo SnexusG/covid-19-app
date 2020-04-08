@@ -43,7 +43,7 @@ class CheckXray : AppCompatActivity() {
         val conditions = FirebaseModelDownloadConditions.Builder()
                 .build()
 
-        val remoteModelAutoML = FirebaseAutoMLRemoteModel.Builder("x_ray_202046151442").build()
+        val remoteModelAutoML = FirebaseAutoMLRemoteModel.Builder("x_ray_classifier_202048144954").build()
 
 
         FirebaseModelManager.getInstance().download(remoteModel, conditions)
