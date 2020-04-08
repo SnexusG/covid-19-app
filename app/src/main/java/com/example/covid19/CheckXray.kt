@@ -6,7 +6,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -20,7 +19,6 @@ import com.google.firebase.ml.custom.*
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.automl.FirebaseAutoMLRemoteModel
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
-import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
 import com.google.firebase.ml.vision.label.FirebaseVisionImageLabeler
 import com.google.firebase.ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabelerOptions
 import kotlinx.android.synthetic.main.activity_check_xray.*
@@ -33,7 +31,7 @@ import java.util.*
 class CheckXray : AppCompatActivity() {
 
     private var interpreter: FirebaseModelInterpreter? = null
-    private var labeler:FirebaseVisionImageLabeler? = null
+    private var labeler: FirebaseVisionImageLabeler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,10 +137,11 @@ class CheckXray : AppCompatActivity() {
                     try {
 
                         //Convert the jpg at the URI to a bitmap & set it to the imageView
-                        val bitmap = BitmapFactory.decodeFile(currentPhotoPath).also { bitmap -> imageView.setImageBitmap(bitmap) }
+                        val bitmap = BitmapFactory.decodeFile(currentPhotoPath)
 
                         //Send the bitmap to the model for classification
                         //sendToModel(bitmap)
+                        setImageView(bitmap, true)
                         sendToAutoMLModel(bitmap)
 
                     } catch (e: IOException) {
@@ -155,14 +154,16 @@ class CheckXray : AppCompatActivity() {
 
                 if (resultCode == Activity.RESULT_OK) {
 
-                    Log.d("ActivityResult","HERE")
-                    Log.d("ActivityResult","${data!!.data}")
-                    imageView.setImageURI(data.data)
-                    val bitmap = (imageView.drawable as BitmapDrawable).bitmap
+                    Log.d("ActivityResult", "HERE")
+                    Log.d("ActivityResult", "${data!!.data}")
+                    hiddenImageView.setImageURI(data.data)
+                    val bitmap = (hiddenImageView.drawable as BitmapDrawable).bitmap
+
+                    setImageView(bitmap, false)
                     //sendToModel(bitmap)
                     sendToAutoMLModel(bitmap)
 
-                }else{
+                } else {
                     Log.d("ActivityResult", "ERROR IN OPERATION_CHOOSE_PHOTO")
                 }
 
@@ -226,23 +227,35 @@ class CheckXray : AppCompatActivity() {
 
     }
 
-    private fun sendToAutoMLModel(receivedImage:Bitmap){
+    private fun sendToAutoMLModel(receivedImage: Bitmap) {
         val image = FirebaseVisionImage.fromBitmap(receivedImage)
 
         labeler!!.processImage(image)
-                .addOnSuccessListener {labels ->
+                .addOnSuccessListener { labels ->
 
-                    for (label in labels){
+                    for (label in labels) {
                         val text = label.text
                         val confidence = label.confidence
+                        outcomeTextView.text = text
+                        confidenceTextView.text = "${confidence*100}%"
 
                         Log.d("AUTOML", "Result: $text = $confidence")
                     }
 
                 }
-                .addOnFailureListener{
+                .addOnFailureListener {
                     Log.d("AUTOML", "Result: ERROR")
                 }
+    }
+
+    private fun setImageView(image: Bitmap, rotation: Boolean) {
+        if (rotation)
+            imageView.rotation = 90f
+        else
+            imageView.rotation = 0f
+        val bitmap = Bitmap.createScaledBitmap(image, 800, 800, false)
+        imageView.setImageBitmap(bitmap)
+        outcomeLayout.visibility = View.VISIBLE
     }
 }
 
