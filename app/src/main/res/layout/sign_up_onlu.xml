@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:inputType="textEmailAddress"
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/colorPrimary"
-            app:met_baseColor="@color/colorPrimary"
-            app:met_primaryColor="@color/colorPrimary"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/gray"
             app:met_floatingLabel="highlight"
             app:met_singleLineEllipsis="true"
             />
@@ -33,15 +33,20 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:inputType="textPassword"
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/colorPrimary"
-            app:met_baseColor="@color/colorPrimary"
-            app:met_primaryColor="@color/colorPrimary"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/gray"
             app:met_floatingLabel="highlight"
             app:met_singleLineEllipsis="true"
             />
 
-
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
 
 
     </LinearLayout>
