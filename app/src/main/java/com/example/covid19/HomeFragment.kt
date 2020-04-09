@@ -52,6 +52,8 @@ class HomeFragment : Fragment() {
         content2.execute()
     }
 
+    private var newsString: String? = ""
+
     private inner class ContentNews : AsyncTask<Void?, Void?, Void?>() {
 
         private val news = arrayOfNulls<String>(5)
@@ -61,7 +63,11 @@ class HomeFragment : Fragment() {
             println("NEWS")
             for (i in news) {
                 println(i)
+
+                newsString += "$i \n\n\n"
             }
+
+            newsFlash.text = newsString
         }
 
         override fun doInBackground(vararg params: Void?): Void? {
@@ -77,6 +83,8 @@ class HomeFragment : Fragment() {
                     val size = data.size
                     news[i - 1] = text
                 }
+
+
             } catch (e: Exception) {
                 e.printStackTrace()
             }
