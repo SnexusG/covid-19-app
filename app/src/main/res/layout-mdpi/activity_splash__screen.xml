@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="20dp"
+    android:background="@drawable/take_action_background"
+    android:padding="20dp"
+    >
+    <TextView
+        android:id="@+id/splash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" COVID - 19"
+        android:textSize="50sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="@drawable/spash_box"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        />
+    <ProgressBar
+        android:id="@+id/splash_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:layout_below="@id/splash_text"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Helping you fight against corona"
+        android:layout_below="@id/splash_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        />
+</RelativeLayout>

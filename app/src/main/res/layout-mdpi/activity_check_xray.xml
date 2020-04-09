@@ -69,18 +69,17 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138">
+        app:layout_constraintVertical_bias="0.029">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="200dp"
-            android:maxHeight="200dp"
-            android:padding="15dp"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"
+            android:padding="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -92,23 +91,18 @@
             android:id="@+id/outcomeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_regular"
             android:gravity="center"
-            android:text="sdfldinfdkinfa"
-            android:textColor="#000"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/confidenceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/montserrat_regular"
-            android:text="sdfldinfdkinfa"
             android:gravity="center"
-            android:textColor="#000"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>

@@ -24,6 +24,10 @@
 
     </LinearLayout>
 
+
+
+
+
     <LinearLayout
         android:id="@+id/actionCardView"
         android:layout_width="match_parent"
@@ -47,14 +51,14 @@
             android:gravity="center"
             android:text="@string/actions"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/QuizButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/white_rounded_background"
             android:fontFamily="@font/montserrat_bold"
