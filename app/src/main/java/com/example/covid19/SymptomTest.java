@@ -90,8 +90,9 @@ public class SymptomTest extends AppCompatActivity {
             intent.putExtra("result", finalScore);
             startActivity(intent);
             finish();
+        }else {
+            symptomsQ.setText(Questions[count]);
         }
-        symptomsQ.setText(Questions[count]);
         //symptomsOptions.clearCheck();
     }
 

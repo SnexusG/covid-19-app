@@ -15,52 +15,71 @@
         android:padding="10dp"
         android:layout_centerInParent="true"
         >
-        <TextView
-            android:padding="10dp"
-            android:layout_width="match_parent"
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:text="Higher the score, greater the chance of corona"
+            android:textSize="24sp"
+            android:text="Test Result : "
+            android:fontFamily="@font/montserrat_bold"
             />
-        <TextView
-        android:id="@+id/ageresults"
-        android:layout_width="match_parent"
-        android:text="NO DATA"
-        android:textSize="30dp"
-        android:padding="5dp"
-        android:layout_height="wrap_content"
-        />
-        <TextView
-            android:id="@+id/symptomresults"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:text="NO DATA"
-            android:textSize="30dp"
-            android:padding="5dp"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/circularProgressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="50"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@drawable/circular"
+            android:secondaryProgress="100"
             />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/whitecircle"
+            android:layout_centerInParent="true"/>
         <TextView
-            android:id="@+id/diseaseresults"
-            android:layout_width="match_parent"
-            android:text="NO DATA"
-            android:textSize="30dp"
-            android:padding="5dp"
+            android:id="@+id/tv"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:gravity="center"
+            android:text="25%"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:elevation="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:padding="8dp"
+                android:fontFamily="@font/montserrat_extra_light"
+                android:text="You can click the following link to contact
+                   your state helpline number for corona related enquiry"
+                />
+        </androidx.cardview.widget.CardView>
         <TextView
-            android:id="@+id/travelCesults"
+            android:id="@+id/stateHelpline"
             android:layout_width="match_parent"
-            android:text="NO DATA"
-            android:textSize="30dp"
-            android:padding="5dp"
             android:layout_height="wrap_content"
-            />
-        <TextView
-            android:id="@+id/quarantineCresults"
-            android:layout_width="match_parent"
-            android:text="NO DATA"
-            android:textSize="30dp"
-            android:padding="5dp"
-            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="20sp"
+            android:text="Maharashtra"
+            android:textColor="@color/com_facebook_blue"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
             />
     </LinearLayout>
 </RelativeLayout>
