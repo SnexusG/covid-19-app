@@ -7,8 +7,10 @@
     app:cardElevation="4dp">
 
     <LinearLayout
+        android:layout_margin="15dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:background="@drawable/take_action_background"
         android:layout_height="wrap_content">
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -18,11 +20,12 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:inputType="textEmailAddress"
-            android:textColorHint="@color/gray"
+            android:textColorHint="@color/black"
             android:textColor="@color/black"
             app:met_baseColor="@color/black"
             app:met_primaryColor="@color/gray"
             app:met_floatingLabel="highlight"
+            android:layout_margin="15dp"
             app:met_singleLineEllipsis="true"
             />
 
@@ -30,10 +33,11 @@
             android:id="@+id/editPassword"
             android:hint="Enter Password"
             android:layout_width="match_parent"
+            android:layout_margin="15dp"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:inputType="textPassword"
-            android:textColorHint="@color/gray"
+            android:textColorHint="@color/black"
             android:textColor="@color/black"
             app:met_baseColor="@color/black"
             app:met_primaryColor="@color/gray"
@@ -45,6 +49,7 @@
             android:id="@+id/spinner1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"/>
 
